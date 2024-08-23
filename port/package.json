@@ -1,0 +1,9 @@
+{
+	
+	"dependencies": {
+		"express": "^4.19.2",
+		"json-server": "^1.0.0-beta.1",
+		"module": "^1.2.5"
+	}
+	
+}

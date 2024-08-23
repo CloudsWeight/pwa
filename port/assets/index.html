@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="img/x-icon" href="/assets/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="/assets/waves.css">
+  <script type="text/javascript"> function testUrl() {
+    fetch('/api/getwaves', {
+      method: 'GET'})
+    .then(response => response.json())
+    .then(data => {
+      console.log('Succesfully called function with data: ', data);
+    })
+    .catch((error) => {
+      console.error('error', error);
+    });
+  }
+  </script>
+  <meta charset="UTF-8">
+  <title>Local Change</title>
+</head>
+<body>
+  <div>
+  <div class="navbar">
+   <div><button onclick="testUrl('http://blenno.com')"><a href="/assets/test"> Displayed Digital</button></a></div></button>
+   <div><button onclick="testUrl()">Digital Function</button></div>
+ </div>
+ <div id="datael"></div>
+</div>
+</body>
+</html>

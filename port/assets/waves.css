@@ -1,0 +1,32 @@
+button {
+	border-radius: 9px;
+	font-family: verdana;
+	text-shadow: salmon;
+	font-weight: bold;
+	letter-spacing: .6em;
+	color: yellow;
+	background: indianred;
+	font-style: bold;
+	border-color: indianred;
+}
+
+body {
+	background: ghostwhite;
+}
+
+div {
+	border-radius: 9px;
+	overflow: hidden;
+	background: goldenrod;
+	padding: min(3px);
+	width: fit-content;
+}
+
+a {
+	text-decoration: inherit;
+	color: inherit;
+}
+
+.navbar {
+	overflow: hidden;
+}
