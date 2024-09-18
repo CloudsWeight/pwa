@@ -22,7 +22,7 @@ app.get("/assets/test", function(req, res)
 
 app.get('/api/getRates', (req, res) => {
 	//const result = console.log('function called', req.body);
-	const pyProc = spawn('python', ['./assets/OandaFile.py']);
+	const pyProc = spawn('python', ['./assets/Rate.py']);
 	pyProc.stdout.on('data', (data) => {
 		console.log(data);
 		res.json(data.toString());
