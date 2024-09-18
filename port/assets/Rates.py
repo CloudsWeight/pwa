@@ -27,9 +27,6 @@ import argparse
 from datetime import datetime 
 
 class OandaApp():
-  '''
-  A class to create an Oanda Stream for Rates
-  '''
 	def __init__(self, token=None, account=None):
 		self.BASE_URL ='https://api-fxtrade.oanda.com'
 		if account is not None:
@@ -47,7 +44,7 @@ class OandaApp():
 			#self.token = SECRET
 		self.token = token
 		self.HEADER = { # Headers and Auth
-					'Authorization': 'Bearer {}'.format('13371337133713371337'),
+					'Authorization': 'Bearer {}'.format('133713371337133713371337'),
 				} 
 		self.ENDPOINT = { 
 						'instruments':f'{self.BASE_URL}/v3/instruments/',
