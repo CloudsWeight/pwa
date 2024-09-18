@@ -11,13 +11,14 @@ button {
 }
 
 body {
-	background: ghostwhite;
+	background: whitesmoke;
+	overflow: hidden;
 }
 
 div {
 	border-radius: 9px;
 	overflow: hidden;
-	background: goldenrod;
+	background: neon;
 	padding: min(3px);
 	width: fit-content;
 }
@@ -26,7 +27,32 @@ a {
 	text-decoration: inherit;
 	color: inherit;
 }
-
+.div-bg {
+	width:100vw;
+	height:100vh;
+	background-image: url('/assets/img/tr3.png');
+	
+	
+	position: relative;
+	overflow: hidden;
+}
 .navbar {
 	overflow: hidden;
 }
+.tickmove {
+
+	display: flex;
+	z-index: 9;
+}
+.tickitem {width:100%%; flex-shrink:0 }
+.tickwrap {
+	background-color: red;
+	overflow: hidden;
+	position: relative;
+}
+@keyframes tickerh {
+	0% { transform: translateX(0%); }
+	60% { transform:translateX(100%); }
+}
+.tickmove {animation: tickerh linear 12s infinite;}
+.tickmove:hover { animation-play-state:paused; }
