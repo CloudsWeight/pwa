@@ -3,28 +3,59 @@
 <head>
   <link rel="icon" type="img/x-icon" href="/assets/favicon.ico">
   <link rel="stylesheet" type="text/css" href="/assets/waves.css">
-  <script type="text/javascript"> function testUrl() {
-    fetch('/api/getwaves', {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript"> function getRates() {
+    fetch('/api/getRates', {
       method: 'GET'})
     .then(response => response.json())
     .then(data => {
-      console.log('Succesfully called function with data: ', data);
+      const el = document.getElementById('datael');
+      const fxData = JSON.parse(data);
+      const fxPair = fxData.instrument;
+      const fxCndls = fxData.candles;
+      document.getElementById("uj").innerText = 'USDJPY: ' + fxCndls[2].mid.c;
+      console.log(JSON.stringify(fxData));
     })
     .catch((error) => {
-      console.error('error', error);
+      console.error('Front end error: ', error);
     });
   }
+
+function getNews() {
+    fetch('/api/getNews', {
+      method: 'GET'})
+    .then(response => response.content())
+    .then(data => {
+      const el = document.getElementById('datael');
+      const fxNews = JSON.parse(data);
+      el.innerText = fxNews;
+      
+    })
+    .catch((error) => {
+      console.error('Front end error: ', error);
+    });
+  }
+getRates();
+setInterval(getRates, 3000);
   </script>
-  <meta charset="UTF-8">
   <title>Local Change</title>
 </head>
-<body>
-  <div>
+<body><div class="div-bg">
+  <div class="tickwrap"><div class="tickmove">
+    <div class="tickitem" id="uj">USDJPY: </div>
+    <div class="tickitem">EURUSD</div>
+    <div class="tickitem">GBPUSD</div>
+  </div>
+<div id="tickheader"><img src="/assets/img/header.png"/></div>
   <div class="navbar">
-   <div><button onclick="testUrl('http://blenno.com')"><a href="/assets/test"> Displayed Digital</button></a></div></button>
-   <div><button onclick="testUrl()">Digital Function</button></div>
+   <div><button><a href="/assets/test">Digital Mag</a></button></div>
+   <br>
+   <div><button onclick="getRates()">Get Rates</button></div>
+   <br>
+   <div><button onclick="getNews()">Get News</button></div>
  </div>
- <div id="datael"></div>
+ <div id="datael"><div style="width: 1139px;"><canvas id="chart"></canvas></div></div>
 </div>
 </body>
 </html>
