@@ -47,7 +47,7 @@ class OandaApp():
 			#self.token = SECRET
 		self.token = token
 		self.HEADER = { # Headers and Auth
-					'Authorization': 'Bearer {}'.format('7337337337337337337'),
+					'Authorization': 'Bearer {}'.format('13371337133713371337'),
 				} 
 		self.ENDPOINT = { 
 						'instruments':f'{self.BASE_URL}/v3/instruments/',
