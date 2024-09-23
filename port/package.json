@@ -1,9 +1,22 @@
 {
-	
+	"name": "port-app",
+	"version": "0.0.2",
+	"scripts": {
+		"cypress:run": "cypress run",
+		"cypress:open": "cypress open",
+		"cypress:firefox:app": "cypress run --env TransferProtocol='https' --browser firefox cypress/e2e/spec.cy.js",
+		"cypress:chrome:app": "cypress run --env TransferProtocol='https' --browser firefox cypress/e2e/spec.cy.js",
+		"cypres:tablet": "cypress run --env TransferProtocol='http' --config viewportHeight=763, viewwportWidth=700"
+	},
+	"devDependencies": {
+		"parcel": "^2.6.2"
+	},
 	"dependencies": {
+		"@cubejs-client/core": "^0.31.0",
+		"chart.js": "^4.0.0",
+		"cypress": "^13.14.2",
 		"express": "^4.19.2",
 		"json-server": "^1.0.0-beta.1",
 		"module": "^1.2.5"
 	}
-	
 }
