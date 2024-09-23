@@ -6,6 +6,9 @@ Current Features:
 - javscript magazine with turnjs
 - scrolling ticker that updates Yen with the help of a python function and the Oanda API
 
+Tests:
+- 'npm run cypress:firefox:app' will run a Cypress test to ensure the app is accessible
+
 Planned Features:
 - Relevant news data to currency pairs
 - Analytics of current price
